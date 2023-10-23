@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-private-users-table
+      author: Babek Beylerli
+      changes:
+        - createTable:
+            tableName: private_users
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: phone_number
+                  type: VARCHAR(10)
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  name: balance
+                  type: DOUBLE
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: 'CURRENT_TIMESTAMP'
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValueComputed: 'CURRENT_TIMESTAMP'
+
+

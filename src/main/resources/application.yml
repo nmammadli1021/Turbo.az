@@ -1,0 +1,12 @@
+spring:
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+  datasource:
+    username: postgres
+    password: "0147"
+    url: jdbc:postgresql://localhost:5432/turbo_az
+  jpa:
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    show-sql: true

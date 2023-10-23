@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create car_salons table
+      author: Babek Beylerli
+      changes:
+        - createTable:
+            tableName: car_salons
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: tittle
+                  type: varchar(255)
+              - column:
+                  name: type
+                  type: varchar(255)
+                  defaultValue: 'SIMPLE'
+              - column:
+                  name: email
+                  type: varchar(255)
+              - column:
+                  name: password
+                  type: varchar(255)
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: active_time
+                  type: varchar(255)
+              - column:
+                  name: remark
+                  type: varchar(255)
+              - column:
+                  name: logo
+                  type: varchar(255)
+              - column:
+                  name: image
+                  type: varchar(255)
+              - column:
+                  name: products_count
+                  type: int
+              - column:
+                  name: view_number
+                  type: int
+              - column:
+                  name: location
+                  type: varchar(255)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: 'CURRENT_TIMESTAMP'
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValueComputed: 'CURRENT_TIMESTAMP'
+              - addAutoIncrement:
+                  tableName: car_salons
+                  columnDataType: int
+                  columnName: id
+
+

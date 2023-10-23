@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create car_situation table
+      author: Babek Beylerli
+      changes:
+        - createTable:
+            tableName: car_situation
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: stroke
+                  type: boolean
+                  defaultValue: false
+              - column:
+                  name: colored
+                  type: boolean
+                  defaultValue: false
+              - column:
+                  name: accident
+                  type: boolean
+                  defaultValue: false
+              - column:
+                  name: credit
+                  type: boolean
+                  defaultValue: false
+              - column:
+                  name: barter
+                  type: boolean
+                  defaultValue: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: 'CURRENT_TIMESTAMP'
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValueComputed: 'CURRENT_TIMESTAMP'

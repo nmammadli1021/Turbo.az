@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create models table
+      author: Babek Beylerli
+      changes:
+        - createTable:
+            tableName: models
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(40)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: 'CURRENT_TIMESTAMP'
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValueComputed: 'CURRENT_TIMESTAMP'
+              - column:
+                  name: brand_id
+                  type: int
+                  constraints:
+                    foreignKeyName: FK_Model_Brand
+                    references: brands(id)
+                    onDelete: CASCADE
+
