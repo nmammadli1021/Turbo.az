@@ -17,6 +17,10 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final AuthService authService;
+    @GetMapping("/get")
+    public String test(){
+        return "odmd";
+    }
 
     @PostMapping("/register")
     public void register(
